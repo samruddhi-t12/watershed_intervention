@@ -1,0 +1,17 @@
+# Node/Vite
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+npm-debug.log
+
+# Python/Offline DB
+__pycache__/
+*.pyc
+venv/
+data/sqlite/
+*.db
+*.sqlite
+
+# OS 
+.DS_Store
+Thumbs.db
