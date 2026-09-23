@@ -22,15 +22,15 @@ export default function LeftSidebar({ activeLayers, setActiveLayers, baseMap, se
   });
 
   return (
-    <div className="w-[300px] shrink-0 bg-white flex flex-col h-full shadow-md z-20 border-r border-slate-200">
+    <div className="w-full lg:w-[300px] shrink-0 h-auto lg:h-full bg-white flex flex-col shadow-md z-20 border-r border-slate-200">
       
       {/* Top half: Filters */}
-      <div className="flex-1 flex flex-col min-h-0">
+      <div className="flex-none lg:flex-1 flex flex-col min-h-0">
         <div className="p-4 border-b border-slate-200 shrink-0 bg-slate-50">
           <h2 className="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Map Layers</h2>
         </div>
         
-        <div className="flex-1 p-4 flex flex-col gap-5 overflow-y-auto">
+        <div className="flex-none lg:flex-1 p-4 flex flex-col gap-5 overflow-y-visible lg:overflow-y-auto">
           <div>
             <div className="text-[11px] uppercase text-slate-500 font-bold mb-2 tracking-wide">Base Map</div>
             <select 
@@ -65,11 +65,11 @@ export default function LeftSidebar({ activeLayers, setActiveLayers, baseMap, se
       </div>
 
       {/* Bottom half: Queue */}
-      <div className="flex-1 flex flex-col min-h-0 border-t border-slate-300">
+      <div className="flex-none lg:flex-1 flex flex-col min-h-0 border-t border-slate-300 mt-4 lg:mt-0">
         <div className="p-4 border-b border-slate-200 shrink-0 bg-slate-50">
           <h2 className="text-xs font-extrabold tracking-widest text-slate-800 uppercase">Intervention Queue</h2>
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-none lg:flex-1 overflow-y-auto h-64 lg:h-auto">
           {sorted.map(inv => (
             <div 
               key={inv.id} 

@@ -83,7 +83,7 @@ export default function App() {
         </div>
       </div>
 
-      <main className="flex-1 flex overflow-hidden">
+      <main className="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
         <LeftSidebar 
           activeLayers={activeLayers}
           setActiveLayers={setActiveLayers}
@@ -94,10 +94,10 @@ export default function App() {
           onSelect={handleSelectId}
         />
         
-        <div className="flex-1 flex flex-col min-w-0 min-h-0 bg-slate-200 border-r border-slate-300 relative">
+        <div className="flex-1 flex flex-col min-h-[500px] lg:min-h-0 min-w-0 bg-slate-200 border-r border-slate-300 relative">
           
-          <div className="bg-white border-b border-slate-300 px-4 py-3 shrink-0 flex items-center justify-center gap-6 shadow-sm z-20">
-            <div className="flex items-center gap-3">
+          <div className="bg-white border-b border-slate-300 px-2 lg:px-4 py-2 lg:py-3 shrink-0 flex flex-wrap items-center justify-center gap-3 lg:gap-6 shadow-sm z-20">
+            <div className="flex items-center gap-2 lg:gap-3">
               <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Analysis: {selectedYear}</span>
               <input 
                 type="range" min="0" max="4" step="1" 
@@ -157,7 +157,7 @@ export default function App() {
         {selectedId ? (
           <RightPanel intervention={selectedInv} demoMode={demoMode} activeTab={activeTab} setActiveTab={setActiveTab} />
         ) : clickedCell ? (
-          <div className="w-[420px] shrink-0 bg-white flex flex-col h-full shadow-2xl z-20">
+          <div className="w-full lg:w-[420px] shrink-0 bg-white flex flex-col h-auto lg:h-full shadow-2xl z-20">
             <div className="p-5 bg-white border-b border-slate-200 shrink-0 relative">
               <h2 className="text-xs font-extrabold text-slate-500 uppercase tracking-widest mb-1">Cell Analysis</h2>
               <div className="text-2xl font-black text-slate-800 leading-tight">Zone #{clickedCell.properties.cell_id}</div>
